@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="MoodAnalayserTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-11-25T07:46:24" hostname="admin1-desktop" time="0.002">
+<testsuite name="MoodAnalayserTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2019-11-25T07:54:33" hostname="admin1-desktop" time="0.005">
   <properties/>
-  <testcase name="givenMessage_whenSad_shouldReturnSad" classname="MoodAnalayserTest" time="0.002"/>
+  <testcase name="giveNullPointerException" classname="MoodAnalayserTest" time="0.001"/>
+  <testcase name="givenMoodAnalyser_whenProper_shouldReturnObject" classname="MoodAnalayserTest" time="0.0"/>
+  <testcase name="givenMessage_whenHappy_shouldReturnHappy" classname="MoodAnalayserTest" time="0.002"/>
+  <testcase name="givenMessage_whenSad_shouldReturnSad" classname="MoodAnalayserTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

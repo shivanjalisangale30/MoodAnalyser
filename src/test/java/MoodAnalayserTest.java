@@ -2,12 +2,14 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+import java.util.Objects;
+
 public class MoodAnalayserTest
 {
     @Test
     public void givenMessage_whenSad_shouldReturnSad()
     {
-        MoodAnalyser moodAnalyser = new MoodAnalyser("I am in Sad Mood");
+        MoodAnalyser moodAnalyser = new MoodAnalyser(null);
         String mood = null;
         try
         {
@@ -25,7 +27,7 @@ public class MoodAnalayserTest
     @Test
     public void givenMessage_whenHappy_shouldReturnHappy()
     {
-        MoodAnalyser moodAnalyser = new MoodAnalyser("I am in Happy Mood");
+        MoodAnalyser moodAnalyser = new MoodAnalyser(null);
         String mood = null;
         try
         {
@@ -67,6 +69,8 @@ public class MoodAnalayserTest
         {
             e.printStackTrace();
         }
-
     }
+
+
+
 }

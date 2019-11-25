@@ -2,6 +2,11 @@ public class MoodAnalyser
 {
     private String message;
 
+    public MoodAnalyser()
+    {
+
+    }
+
     public MoodAnalyser(String message)
     {
         this.message = message;
@@ -19,7 +24,7 @@ public class MoodAnalyser
         {
             if (message.length() == 0 )
             {
-                throw new MoodAnalysisException("Please enter proper message.");
+                throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.ENTERED_EMPTY, "Please enter proper message");
             }
             if(message.contains("Sad"))
             {
@@ -32,7 +37,16 @@ public class MoodAnalyser
         }
         catch (NullPointerException e)
         {
-            throw new MoodAnalysisException("Please enter proper message.");
+            throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.ENTERED_NULL , "Please enter proper message.");
         }
+    }
+
+    public boolean equals(Object another)
+    {
+        if(this.message.equals(((MoodAnalyser)another).message))
+        {
+            return true;
+        }
+        return false;
     }
 }
