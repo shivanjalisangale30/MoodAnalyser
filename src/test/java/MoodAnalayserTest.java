@@ -4,19 +4,17 @@ import org.junit.rules.ExpectedException;
 
 public class MoodAnalayserTest
 {
-
     @Test
     public void givenMessage_whenSad_shouldReturnSad()
     {
-        MoodAnalsyser moodAnalsyser = new MoodAnalsyser();
+        MoodAnalyser moodAnalyser = new MoodAnalyser("I am in Sad Mood");
         String mood = null;
         try
         {
             ExpectedException exceptionRule = ExpectedException.none();
             exceptionRule.expect(MoodAnalysisException.class);
-            mood = moodAnalsyser.analyseMood("This is Sad Mood");
+            mood = moodAnalyser.analyseMood("This is Sad Mood");
             Assert.assertEquals("Sad", mood);
-
         }
         catch (MoodAnalysisException e)
         {
@@ -25,30 +23,50 @@ public class MoodAnalayserTest
     }
 
     @Test
-    public void givenMessage_whenHappy_shouldReturnHappy() throws MoodAnalysisException
+    public void givenMessage_whenHappy_shouldReturnHappy()
     {
-        MoodAnalsyser moodAnalsyser = new MoodAnalsyser();
+        MoodAnalyser moodAnalyser = new MoodAnalyser("I am in Happy Mood");
         String mood = null;
-
+        try
+        {
             ExpectedException exceptionRule = ExpectedException.none();
             exceptionRule.expect(MoodAnalysisException.class);
-            mood = moodAnalsyser.analyseMood("This is Happy Mood");
+            mood = moodAnalyser.analyseMood("This is Happy Mood");
             Assert.assertEquals("Happy" , mood);
-
+        }
+        catch (MoodAnalysisException e)
+        {
+            e.printStackTrace();
+        }
     }
 
     @Test
     public void giveNullPointerException()
     {
-        MoodAnalsyser moodAnalsyser = new MoodAnalsyser();
+        MoodAnalyser moodAnalyser = new MoodAnalyser(null);
         try
         {
-            ExpectedException exceptionRule = ExpectedException.none();
-            exceptionRule.expect(MoodAnalysisException.class);
-            moodAnalsyser.analyseMood(null);
+            moodAnalyser.analyseMood(null);
         }
         catch (MoodAnalysisException e)
         {
+            Assert.assertEquals("Please enter proper message.",e.getMessage());
         }
+    }
+
+    @Test
+    public void givenMoodAnalyser_whenProper_shouldReturnObject()
+    {
+        MoodAnalyser moodAnalyser = MoodAnalyserFactory.createMoodAnalsyser("I am in Happy Mood");
+        try
+        {
+            String mood = moodAnalyser.analyseMood();
+            Assert.assertEquals("Happy" , mood);
+        }
+        catch (MoodAnalysisException e)
+        {
+            e.printStackTrace();
+        }
+
     }
 }
