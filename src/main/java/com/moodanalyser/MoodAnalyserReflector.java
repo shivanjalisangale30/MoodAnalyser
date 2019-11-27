@@ -1,3 +1,7 @@
+package com.moodanalyser;
+
+import com.moodanalyser.MoodAnalyser;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -6,7 +10,7 @@ public class MoodAnalyserReflector {
 
     public static Constructor<?> getConstructor(Class<?>... param) throws MoodAnalysisException {
         try {
-            Class<?> moodAnalyserClass = Class.forName("MoodAnalyser");
+            Class<?> moodAnalyserClass = Class.forName("com.moodanalyser.MoodAnalyser");
             return moodAnalyserClass.getConstructor(param);
         } catch (ClassNotFoundException e) {
             throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.NO_SUCH_CLASS, e.getMessage());
@@ -28,7 +32,7 @@ public class MoodAnalyserReflector {
 
     public static MoodAnalyser createMoodAnalsyser(Constructor<?> constructor, String message) {
         try {
-            Class<?> moodAnalyserClass = Class.forName("MoodAnalyser");
+            Class<?> moodAnalyserClass = Class.forName("com.moodanalyser.MoodAnalyser");
             Constructor<?> moodConstructor = moodAnalyserClass.getConstructor(String.class);
             Object moodObj = moodConstructor.newInstance(message);
             return (MoodAnalyser) moodObj;
