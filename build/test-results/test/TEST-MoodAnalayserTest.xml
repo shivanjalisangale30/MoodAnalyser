@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="MoodAnalayserTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2019-11-25T11:56:31" hostname="admin1-desktop" time="0.006">
+<testsuite name="MoodAnalayserTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2019-11-27T11:26:03" hostname="admin1-desktop" time="0.007">
   <properties/>
-  <testcase name="giveNullPointerException" classname="MoodAnalayserTest" time="0.001"/>
-  <testcase name="givenMoodAnalyser_whenProper_shouldReturnObject" classname="MoodAnalayserTest" time="0.0"/>
+  <testcase name="givenMoodAnalyser_OnChangedMood_shoudlReturnHappy" classname="MoodAnalayserTest" time="0.001"/>
+  <testcase name="giveNullPointerException" classname="MoodAnalayserTest" time="0.0"/>
+  <testcase name="givenMoodAnalyser_whenProper_shouldReturnObject" classname="MoodAnalayserTest" time="0.001"/>
+  <testcase name="givenHappyMesssage_withReflection_shouldReturnHappy" classname="MoodAnalayserTest" time="0.0"/>
   <testcase name="giveNullPointerExceptionUsingEnum" classname="MoodAnalayserTest" time="0.0"/>
   <testcase name="givenEmptyExceptionUsingEnum" classname="MoodAnalayserTest" time="0.0"/>
-  <testcase name="givenMessage_whenHappy_shouldReturnHappy" classname="MoodAnalayserTest" time="0.003"/>
+  <testcase name="givenHappyMessage_whenDefaultConstructor_shouldReturnHappy" classname="MoodAnalayserTest" time="0.0"/>
+  <testcase name="givenMessage_whenHappy_shouldReturnHappy" classname="MoodAnalayserTest" time="0.002"/>
   <testcase name="givenObject_whenProper_shouldReturnObjectUsingReflector" classname="MoodAnalayserTest" time="0.0"/>
-  <testcase name="givenMessage_whenSad_shouldReturnSad" classname="MoodAnalayserTest" time="0.001"/>
+  <testcase name="givenMessage_whenSad_shouldReturnSad" classname="MoodAnalayserTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
