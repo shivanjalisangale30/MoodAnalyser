@@ -1,4 +1,4 @@
-package com.com.generics;
+package com.generics;
 
 public class Generics<X, Y, Z> {
 
